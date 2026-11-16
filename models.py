@@ -1,3 +1,4 @@
+from pydantic import BaseModel
 from sqlalchemy import ForeignKey, String
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
@@ -28,3 +29,7 @@ class Ticket(Base):
 
     def __repr__(self) -> str:
         return f"Ticket(id={self.id!r}, user_id={self.user_id!r})"
+
+
+class TicketRequest(BaseModel):
+    user_id: int
