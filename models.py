@@ -1,15 +1,5 @@
-import os
-
-from dotenv import load_dotenv
-from sqlalchemy import ForeignKey, String, create_engine
+from sqlalchemy import ForeignKey, String
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
-
-load_dotenv()
-
-DATABASE_URL = os.environ.get(
-    "DATABASE_URL", ""
-)
-engine = create_engine(DATABASE_URL)
 
 
 class Base(DeclarativeBase):
